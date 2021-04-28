@@ -1,21 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { useCachedResources } from 'react-native-rapi-ui';
+import HomeScreen from './src/HomeScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Fokiu!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const App = () =>{
+  const isLoadingComplete = useCachedResources();
+  if(!isLoadingComplete){
+    return null;
+  }else{
+    return <HomeScreen/>;
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
