@@ -62,7 +62,7 @@ export default function HomeScreen({ navigation }) {
                             </View>
 
                             <View style={{marginTop: 45}}>
-                                <Button text="Iniciar Sesión" color="#997a3c" status="info"/>
+                                <Button text="Iniciar Sesión" color="#997a3c" status="info" onPress={() => navigation.navigate('Home')}/>
                                 <Button text="Registrate" color="#997a3c" outline style={{marginTop: 10}} onPress={() => navigation.navigate('Registro')}/>
                                 <Text style={{marginTop: 40}}> Recuperar Contraseña</Text>
                             </View>
