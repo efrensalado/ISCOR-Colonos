@@ -1,14 +1,20 @@
 import React from 'react';
-import { useCachedResources } from 'react-native-rapi-ui';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './src/HomeScreen';
+import SplashScreen from './src/SplashScreen';
+import Registro from './src/Registro';
 
-const App = () =>{
-  const isLoadingComplete = useCachedResources();
-  if(!isLoadingComplete){
-    return null;
-  }else{
-    return <HomeScreen/>;
-  }
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{gestureEnabled: false,headerTitleStyle: { alignSelf: 'center' }}} initialRouteName='Bienvenido'>
+        <Stack.Screen name='Inicio' component={HomeScreen} options={{headerLeft: null, gestureEnabled: false}} />
+        <Stack.Screen name='Bienvenido' component={SplashScreen} />
+        <Stack.Screen name='Registro' component={Registro} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
-
-export default App;
