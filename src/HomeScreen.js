@@ -48,6 +48,7 @@ export default function HomeScreen({ navigation }) {
                                 <Text>Correo Electrónico</Text>
                                 <TextInput
                                     placeholder="example@example.com"
+                                    keyboardType="email-address"
                                     style={{marginTop: 10, borderColo: '#d8d8d8', borderRadius: 8, backgroundColor: '#ffffff'}}
                                 />
                             </View>
