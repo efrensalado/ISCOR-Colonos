@@ -19,14 +19,7 @@ export default function Invitar({ navigation }) {
       return true;
     };
 
-    const Forms = () => {
-        const [pickerValue, setPickerValue] = React.useState(null);
-        const items = [
-            { label: 'Front-end Developer', value: 'FED' },
-            { label: 'Back-end Developer', value: 'BED' },
-            { label: 'Full-stack Developer', value: 'FSD' },
-        ];
-    }
+    
 
     const backHandler = BackHandler.addEventListener(
       "hardwareBackPress",
@@ -64,11 +57,9 @@ export default function Invitar({ navigation }) {
                             </View>
                             <View style={{marginTop: 45}}>
                                 <Text>Hora de llegada</Text>
-                                <Picker 
-                                    items={items}
-                                    value={pickerValue}
-                                    placeholder="Choose your role"
-                                />
+                                <Picker.Items label="Hola" value=""/>
+                                <Picker.Items label="Hola" value=""/>
+                                <Picker.Items label="Hola" value=""/>
                                 <Button text="Generar Código QR" color="#997a3c" outline style={{marginTop: 10}} onPress={() => navigation.navigate('Qr')}/>
                             </View>
                         </SectionContent>
