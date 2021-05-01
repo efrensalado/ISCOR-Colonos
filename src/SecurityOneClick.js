@@ -1,31 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, Image, BackHandler, Alert } from 'react-native';
+import { View, ScrollView, Image, BackHandler, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import{
     Layout, Section, SectionContent, Text, Button, TextInput, theme
 } from 'react-native-rapi-ui';
+import { Entypo } from '@expo/vector-icons';
 
 export default function SecurityOneClick({ navigation }) {
-    useEffect(() => {
-    const backAction = () => {
-      Alert.alert("¡Espera!", "¿Deseas salir de la aplicación?", [
-        {
-          text: "Cancelar",
-          onPress: () => null,
-          style: "cancel"
-        },
-        { text: "Si", onPress: () => BackHandler.exitApp() }
-      ]);
-      return true;
-    };
-
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      backAction
-    );
-
-    return () => backHandler.remove();
-      }, []);
     
     return(
         <Layout>
@@ -43,29 +24,57 @@ export default function SecurityOneClick({ navigation }) {
                     
                     <Section style={{marginTop: 30, width: "95%"}}>
                         <SectionContent>
-                            <Text size="xl" fontWeight="bold"> Inicia sesión en tu cuenta de ISCOR</Text>
-                            <View style={{marginTop: 45}}>
-                                <Text>Correo Electrónico</Text>
-                                <TextInput
-                                    placeholder="example@example.com"
-                                    keyboardType="email-address"
-                                    style={{marginTop: 10, borderColo: '#d8d8d8', borderRadius: 8, backgroundColor: '#ffffff'}}
-                                />
-                            </View>
-                            <View style={{marginTop: 25}}>
-                                <Text>Contraseña</Text>
-                                <TextInput
-                                    placeholder='************'
-                                    secureTextEntry={true}
-                                    style={{marginTop: 10}}
-                                />
+                            <Text size="xl" fontWeight="bold"> Security OneClick</Text>
+                        
+
+                            <View style={{marginTop: 40}}>
+                            <TouchableOpacity  color="#997a3c" outline  style={{marginTop: 5, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
+                                <Text>Emergencias: 911
+                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
+                                </Text>
+                            </TouchableOpacity>
                             </View>
 
-                            <View style={{marginTop: 45}}>
-                                <Button text="Iniciar Sesión" color="#997a3c" status="info"/>
-                                <Button text="Registrate" color="#997a3c" outline style={{marginTop: 10}} onPress={() => navigation.navigate('Registro')}/>
-                                <Text style={{marginTop: 40}}> Recuperar Contraseña</Text>
+                            <View style={{marginTop: 10}}>
+                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
+                                <Text>Protección Civil: 56-83-22-22
+                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
+                                </Text>
+                            </TouchableOpacity>
                             </View>
+
+                            <View style={{marginTop: 10}}>
+                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
+                                <Text>Fuga de Agua: 56-54-32-10
+                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
+                                </Text>
+                            </TouchableOpacity>
+                            </View>
+
+                            <View style={{marginTop: 10}}>
+                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
+                                <Text>Denuncia Anónima: 089
+                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
+                                </Text>
+                            </TouchableOpacity>
+                            </View>
+
+                            <View style={{marginTop: 10}}>
+                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
+                                <Text>Fuga de Gas: 53-53-27-63
+                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
+                                </Text>
+                            </TouchableOpacity>
+                            </View>
+
+                            <View style={{marginTop: 10}}>
+                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
+                                <Text>Bomberos: 57-68-37-00
+                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
+                                </Text>
+                            </TouchableOpacity>
+                            </View>
+                            
                         </SectionContent>
                     </Section>
                 </View>

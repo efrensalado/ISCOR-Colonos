@@ -8,6 +8,8 @@ import SecurityOneClick from './src/SecurityOneClick';
 import Home from './src/Home';
 import Invitar from './src/Invitar';
 import Qr from './src/Qr';
+import Sacs from './src/Sacs';
+import ClasesScreen from './src/ClasesScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +24,8 @@ export default function App() {
         <Stack.Screen name='Home' component={Home} />
         <Stack.Screen name='Invitar' component={Invitar} />
         <Stack.Screen name='Qr' component={Qr} />
+        <Stack.Screen name='Sacs' component={Sacs} />
+        <Stack.Screen name='Clases' component={ClasesScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

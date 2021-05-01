@@ -6,26 +6,6 @@ import{
 } from 'react-native-rapi-ui';
 
 export default function Home({ navigation }) {
-    useEffect(() => {
-    const backAction = () => {
-      Alert.alert("¡Espera!", "¿Deseas salir de la aplicación?", [
-        {
-          text: "Cancelar",
-          onPress: () => null,
-          style: "cancel"
-        },
-        { text: "Si", onPress: () => BackHandler.exitApp() }
-      ]);
-      return true;
-    };
-
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      backAction
-    );
-
-    return () => backHandler.remove();
-      }, []);
     
     return(
         <Layout>
@@ -48,7 +28,7 @@ export default function Home({ navigation }) {
                             <View style={{marginTop: 25}}>
 
                                 <Button text="Invitar" color="#997a3c" outline style={{marginTop: 10}} onPress={() => navigation.navigate('Invitar')}/>
-                                <Button text="SACS" color="#997a3c" outline style={{marginTop: 40}} onPress={() => navigation.navigate('')}/>
+                                <Button text="SACS" color="#997a3c" outline style={{marginTop: 40}} onPress={() => navigation.navigate('Sacs')}/>
                                 <Button text="Security OneClick" color="#997a3c" outline style={{marginTop: 40, marginBottom: 40}} onPress={() => navigation.navigate('SecurityOneClick')}/>
 
                             </View>
