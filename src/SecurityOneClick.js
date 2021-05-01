@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, Image, BackHandler, TouchableOpacity } from 'react-native';
+import { Linking, Platform, View, ScrollView, Image, BackHandler, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import{
     Layout, Section, SectionContent, Text, Button, TextInput, theme
@@ -7,6 +7,18 @@ import{
 import { Entypo } from '@expo/vector-icons';
 
 export default function SecurityOneClick({ navigation }) {
+    const makeCall = (n) => {
+
+    let phoneNumber = '';
+
+    if (Platform.OS === 'android') {
+      phoneNumber = 'tel:${'+n+'}';
+    } else {
+      phoneNumber = 'telprompt:${'+n+'}';
+    }
+
+    Linking.openURL(phoneNumber);
+    };
     
     return(
         <Layout>
@@ -22,59 +34,203 @@ export default function SecurityOneClick({ navigation }) {
                     
                     <Image source={require('../assets/iscorLogo.png')} style={{ height: 50, width: 150, marginTop: 30, marginBottom: 15 }}/>    
                     
-                    <Section style={{marginTop: 30, width: "95%"}}>
+                    <Section style={{ marginTop: 30, width: "95%" }}>
+                        <SectionContent style={{alignItems: 'center', alignContent: 'center'}} >
+                            <Text size="xl" fontWeight="bold">Security OneClick</Text>
+                        </SectionContent>
                         <SectionContent>
-                            <Text size="xl" fontWeight="bold"> Security OneClick</Text>
-                        
-
-                            <View style={{marginTop: 40}}>
-                            <TouchableOpacity  color="#997a3c" outline  style={{marginTop: 5, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
-                                <Text>Emergencias: 911
-                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
-                                </Text>
-                            </TouchableOpacity>
+                            <View
+                                style={{
+                                    flex: 1,
+                                    borderWidth: 2,
+                                    borderColor: '#997a3c',
+                                    flexDirection: 'row',
+                                    margin: 5
+                                }}
+                            >
+                                <View
+                                    style={{
+                                        flex: 1,
+                                        padding: 7
+                                    }}
+                                >
+                                    <Text>
+                                    Emergencias: 911
+                                    </Text>
+                                </View>
+                                <TouchableOpacity onPress={() => makeCall('911')}
+                                    style={{
+                                    flex: 1,
+                                    maxWidth: 70,
+                                    backgroundColor:'#997a3c',
+                                    alignItems: 'center',
+                                    alignContent: 'center',
+                                    justifyContent: 'center'
+                                    }}
+                                >
+                                    <Entypo  name="phone" size={24} color="white" ></Entypo>
+                                </TouchableOpacity>
                             </View>
-
-                            <View style={{marginTop: 10}}>
-                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
-                                <Text>Protección Civil: 56-83-22-22
-                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
-                                </Text>
-                            </TouchableOpacity>
+                            <View
+                                style={{
+                                    flex: 1,
+                                    borderWidth: 2,
+                                    borderColor: '#997a3c',
+                                    flexDirection: 'row',
+                                    margin: 5
+                                }}
+                            >
+                                <View
+                                    style={{
+                                        flex: 1,
+                                        padding: 7
+                                    }}
+                                >
+                                    <Text>
+                                    Protección Civil: 56-83-22-22
+                                    </Text>
+                                </View>
+                                <TouchableOpacity onPress={() => makeCall('56832222')}
+                                    style={{
+                                    flex: 1,
+                                    maxWidth: 70,
+                                    backgroundColor:'#997a3c',
+                                    alignItems: 'center',
+                                    alignContent: 'center',
+                                    justifyContent: 'center'
+                                    }}
+                                >
+                                    <Entypo  name="phone" size={24} color="white" ></Entypo>
+                                </TouchableOpacity>
                             </View>
-
-                            <View style={{marginTop: 10}}>
-                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
-                                <Text>Fuga de Agua: 56-54-32-10
-                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
-                                </Text>
-                            </TouchableOpacity>
+                            <View
+                                style={{
+                                    flex: 1,
+                                    borderWidth: 2,
+                                    borderColor: '#997a3c',
+                                    flexDirection: 'row',
+                                    margin: 5
+                                }}
+                            >
+                                <View
+                                    style={{
+                                        flex: 1,
+                                        padding: 7
+                                    }}
+                                >
+                                    <Text>
+                                    Fuga de Agua: 56-54-32-10
+                                    </Text>
+                                </View>
+                                <TouchableOpacity onPress={() => makeCall('56543210')}
+                                    style={{
+                                    flex: 1,
+                                    maxWidth: 70,
+                                    backgroundColor:'#997a3c',
+                                    alignItems: 'center',
+                                    alignContent: 'center',
+                                    justifyContent: 'center'
+                                    }}
+                                >
+                                    <Entypo  name="phone" size={24} color="white" ></Entypo>
+                                </TouchableOpacity>
                             </View>
-
-                            <View style={{marginTop: 10}}>
-                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
-                                <Text>Denuncia Anónima: 089
-                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
-                                </Text>
-                            </TouchableOpacity>
+                            <View
+                                style={{
+                                    flex: 1,
+                                    borderWidth: 2,
+                                    borderColor: '#997a3c',
+                                    flexDirection: 'row',
+                                    margin: 5
+                                }}
+                            >
+                                <View
+                                    style={{
+                                        flex: 1,
+                                        padding: 7
+                                    }}
+                                >
+                                    <Text>
+                                    Denuncia Anónima: 089
+                                    </Text>
+                                </View>
+                                <TouchableOpacity onPress={() => makeCall('089')}
+                                    style={{
+                                    flex: 1,
+                                    maxWidth: 70,
+                                    backgroundColor:'#997a3c',
+                                    alignItems: 'center',
+                                    alignContent: 'center',
+                                    justifyContent: 'center'
+                                    }}
+                                >
+                                    <Entypo  name="phone" size={24} color="white" ></Entypo>
+                                </TouchableOpacity>
                             </View>
-
-                            <View style={{marginTop: 10}}>
-                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
-                                <Text>Fuga de Gas: 53-53-27-63
-                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
-                                </Text>
-                            </TouchableOpacity>
+                            <View
+                                style={{
+                                    flex: 1,
+                                    borderWidth: 2,
+                                    borderColor: '#997a3c',
+                                    flexDirection: 'row',
+                                    margin: 5
+                                }}
+                            >
+                                <View
+                                    style={{
+                                        flex: 1,
+                                        padding: 7
+                                    }}
+                                >
+                                    <Text>
+                                    Fuga de Gas: 53-53-27-63
+                                    </Text>
+                                </View>
+                                <TouchableOpacity onPress={() => makeCall('53532763')}
+                                    style={{
+                                    flex: 1,
+                                    maxWidth: 70,
+                                    backgroundColor:'#997a3c',
+                                    alignItems: 'center',
+                                    alignContent: 'center',
+                                    justifyContent: 'center'
+                                    }}
+                                >
+                                    <Entypo  name="phone" size={24} color="white" ></Entypo>
+                                </TouchableOpacity>
                             </View>
-
-                            <View style={{marginTop: 10}}>
-                            <TouchableOpacity  color="#997a3c" outline  alignItems='left' style={{marginTop: 10, borderWidth:2, borderColor: '#997a3c', padding: 7, borderRadius: 15}}>
-                                <Text>Bomberos: 57-68-37-00
-                                <Entypo  name="phone" size={24} color="#997a3c" ></Entypo>
-                                </Text>
-                            </TouchableOpacity>
+                            <View
+                                style={{
+                                    flex: 1,
+                                    borderWidth: 2,
+                                    borderColor: '#997a3c',
+                                    flexDirection: 'row',
+                                    margin: 5
+                                }}
+                            >
+                                <View
+                                    style={{
+                                        flex: 1,
+                                        padding: 7
+                                    }}
+                                >
+                                    <Text>
+                                    Bomberos: 57-68-37-00
+                                    </Text>
+                                </View>
+                                <TouchableOpacity onPress={() => makeCall('57683700')}
+                                    style={{
+                                    flex: 1,
+                                    maxWidth: 70,
+                                    backgroundColor:'#997a3c',
+                                    alignItems: 'center',
+                                    alignContent: 'center',
+                                    justifyContent: 'center'
+                                    }}
+                                >
+                                    <Entypo  name="phone" size={24} color="white" ></Entypo>
+                                </TouchableOpacity>
                             </View>
-                            
                         </SectionContent>
                     </Section>
                 </View>

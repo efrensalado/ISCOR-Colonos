@@ -40,7 +40,7 @@ export default function Clase({ id, calif, titulo, genero, imagen }) {
 
 
       </View>
-      <View
+      <TouchableOpacity
         style={{
           flex: 1,
           maxWidth: 70,
@@ -48,12 +48,11 @@ export default function Clase({ id, calif, titulo, genero, imagen }) {
           alignItems: 'center',
           alignContent: 'center',
           justifyContent: 'center'
+          
         }}
       >
-        <TouchableOpacity>
           <Entypo  name="phone" size={24} color="white" ></Entypo>
-       </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
