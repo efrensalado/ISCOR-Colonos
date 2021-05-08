@@ -45,7 +45,8 @@ export default function SecurityOneClick({ navigation }) {
                                     borderWidth: 2,
                                     borderColor: '#997a3c',
                                     flexDirection: 'row',
-                                    margin: 5
+                                    margin: 5,
+                                    marginBottom: 16
                                 }}
                             >
                                 <View
@@ -77,7 +78,8 @@ export default function SecurityOneClick({ navigation }) {
                                     borderWidth: 2,
                                     borderColor: '#997a3c',
                                     flexDirection: 'row',
-                                    margin: 5
+                                    margin: 5,
+                                    marginBottom: 16
                                 }}
                             >
                                 <View
@@ -109,7 +111,8 @@ export default function SecurityOneClick({ navigation }) {
                                     borderWidth: 2,
                                     borderColor: '#997a3c',
                                     flexDirection: 'row',
-                                    margin: 5
+                                    margin: 5,
+                                    marginBottom: 16
                                 }}
                             >
                                 <View
@@ -141,7 +144,8 @@ export default function SecurityOneClick({ navigation }) {
                                     borderWidth: 2,
                                     borderColor: '#997a3c',
                                     flexDirection: 'row',
-                                    margin: 5
+                                    margin: 5,
+                                    marginBottom: 16
                                 }}
                             >
                                 <View
@@ -173,7 +177,8 @@ export default function SecurityOneClick({ navigation }) {
                                     borderWidth: 2,
                                     borderColor: '#997a3c',
                                     flexDirection: 'row',
-                                    margin: 5
+                                    margin: 5,
+                                    marginBottom: 16
                                 }}
                             >
                                 <View
@@ -205,7 +210,8 @@ export default function SecurityOneClick({ navigation }) {
                                     borderWidth: 2,
                                     borderColor: '#997a3c',
                                     flexDirection: 'row',
-                                    margin: 5
+                                    margin: 5,
+                                    marginBottom: 16
                                 }}
                             >
                                 <View

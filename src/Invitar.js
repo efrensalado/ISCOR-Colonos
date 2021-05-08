@@ -27,7 +27,7 @@ const showMode = currentMode => {
 };
 
 const showDatePicker = () => {
-  showMode('time');
+    showMode('time');
 };
     
     return(
@@ -56,10 +56,8 @@ const showDatePicker = () => {
                                     style={{marginTop: 10, borderRadius: 8, backgroundColor: '#ffffff'}}
                                 />
                             </View>
-                            <View>
-                                <TouchableOpacity onPress={showDatePicker}>
-                                    <Text style={styles.title}>Seleccione hora de visita</Text>
-                                </TouchableOpacity>
+                            <View>                                
+                                <Button style={{marginTop: 20}} outline text="Seleccione hora de visita" color="#997a3c" status="info" onPress={showDatePicker}/>
                                 {show && (
                                     <DateTimePicker
                                         testID="dateTimePicker"

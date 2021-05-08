@@ -17,7 +17,7 @@ export default function ClasesScreen({ route, navigation }) {
   const [loaded, setLoaded] = useState(false);
   const param = route.params.value; //Valor que trae el select
   useEffect(() => {
-    fetch('http://dicormotechnology.com/ISCOR/ws/Servicio/getClase?idTipoClase='+param)
+    fetch('http://dicormotechnology.com/ISCOR/ws/Servicio/getAlimento?idServicioA='+param)
       .then(response => response.json())
       .then(responseJson => {
         setClases(responseJson);
@@ -29,7 +29,7 @@ export default function ClasesScreen({ route, navigation }) {
   }, []);
 
   return (
-    <ScrollView keyboardShouldPersistTaps="handled">
+    <ScrollView keyboardShouldPersistTaps='always'>
       <View style={
         {
           flex: 1,
@@ -37,6 +37,8 @@ export default function ClasesScreen({ route, navigation }) {
           justifyContent: 'center'
         }}>
         <Image source={require('../assets/iscorLogo.png')} style={{ height: 50, width: 150, marginTop: 30, marginBottom: 15 }}/>    
+      
+        
           <View>
         </View>
             <View style={[styles.container, styles.horizontal]}>

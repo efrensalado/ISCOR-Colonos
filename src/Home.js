@@ -5,8 +5,9 @@ import{
     Layout, Section, SectionContent, Text, Button, TextInput, theme
 } from 'react-native-rapi-ui';
 
-export default function Home({ navigation }) {
-    
+export default function Home({ route, navigation }) {
+    const correo = route.params.value;
+    alert(correo);
     return(
         <Layout>
             <StatusBar barStyle='light-content'></StatusBar>
@@ -23,6 +24,10 @@ export default function Home({ navigation }) {
                     <Section style={{marginTop: 30, width: "95%"}}>
                         <SectionContent style={{alignItems: 'center', alignContent: 'center'}} >
                             <Text size="xl" fontWeight="bold"> HOME </Text>
+                            <Image
+                                source={{ isStatic: true,uri: 'file:///var/mobile/Containers/Data/Application/C688C3E0-E6A5-473F-AA73-7FBDFF061839/Library/Caches/ExponentExperienceData/%2540zaidpereyra%252FAppColonos/ImagePicker/76E078F9-9B5E-4193-8B80-4D36C8D16A69.jpgicker/76E078F9-9B5E-4193-8B80-4D36C8D16A69.jpg' }}
+                                style={{ width: 150, height: 150, borderWidth:1, borderColor:'#111' }}
+                            />
                         </SectionContent>
                         <SectionContent>
                             <View style={{marginTop: 25}}>
