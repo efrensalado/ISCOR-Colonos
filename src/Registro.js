@@ -1,11 +1,81 @@
+<<<<<<< Updated upstream
 import React, { useEffect, useState } from 'react';
 import {View, ScrollView, Image, Alert} from 'react-native';
+=======
+<<<<<<< HEAD
+import React, { Component } from 'react';
+import {View, ScrollView, Image , Alert} from 'react-native';
+=======
+import React, { useEffect, useState } from 'react';
+import {View, ScrollView, Image, Alert} from 'react-native';
+>>>>>>> 7b71b075ae2881041f2901ab53dfc0222c08364f
+>>>>>>> Stashed changes
 import{
     Layout, Section, SectionContent, Text, Button, TextInput, theme
 } from 'react-native-rapi-ui';
 import { StatusBar } from 'expo-status-bar';
 import * as ImagePicker from 'expo-image-picker';
 
+<<<<<<< HEAD
+export default class Registro extends Component{
+
+    constructor(props)
+    {
+        super(props);
+
+        this.state = {
+         userName: '',
+         userLast: '' 
+    }
+}
+
+saveData = () =>
+    {
+      //alert('ok mensaji');
+
+      Alert.alert(
+        "Usuario",
+        "Registrado correctamente",
+        [
+          { text: "OK", 
+          onPress: () => this.props.navigation.navigate('Inicio')}
+        ]
+      );
+    /*const {userName} = this.state;
+    const {userLast} = this.state;
+
+    fetch('',
+            {
+                method: 'POST',
+                headers: 
+                {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(
+                {
+                    //primero el campo de bd, variable definida
+                    NomComp: userName,
+
+                    Colonia: userLast,
+                })
+
+            }).then((response) => response.json()).then((responseJson) =>
+            {
+                alert(responseJson);
+                //this.setState({ loading: false, disabled: false });
+            }).catch((error) =>
+            {
+                console.error(error);
+                //this.setState({ loading: false, disabled: false });
+            });*/
+
+
+    }
+
+render(){
+    //const { navigation } = this.props;
+=======
 export default function Registro({ navigation }) {
     const [image, setImage] = useState(null);
     const [nombre, setNombre] = useState('');
@@ -99,6 +169,10 @@ export default function Registro({ navigation }) {
       .catch(error => console.log(error));
   };
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7b71b075ae2881041f2901ab53dfc0222c08364f
+>>>>>>> Stashed changes
     return(
         <Layout>
             <StatusBar barStyle='light-content'></StatusBar>
@@ -116,6 +190,21 @@ export default function Registro({ navigation }) {
                         <Text size="xl" fontWeight="bold"> Registrate en ISCOR</Text>
                         <View style={{marginTop:25}}>
                             <Text>Nombre completo</Text>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                            <TextInput
+                            onChangeText= {userName => this.setState({userName})}
+                            style={{marginTop: 10, borderColo: '#d8d8d8', borderRadius: 8, backgroundColor: '#ffffff'}}
+                            />
+                        </View>
+                        <View style={{marginTop:25}}>
+                            <Text>apellido</Text>
+                            <TextInput
+                            onChangeText= {userLast => this.setState({userLast})}
+                            style={{marginTop: 10, borderColo: '#d8d8d8', borderRadius: 8, backgroundColor: '#ffffff'}}
+=======
+>>>>>>> Stashed changes
                            <TextInput
                                 placeholder="Nombre completo"
                                 style={{marginTop: 10, borderColo: '#d8d8d8', borderRadius: 8, backgroundColor: '#ffffff'}}
@@ -130,6 +219,10 @@ export default function Registro({ navigation }) {
                                 style={{marginTop: 10, borderColo: '#d8d8d8', borderRadius: 8, backgroundColor: '#ffffff'}}
                                 value={direccion}
                                 onChangeText={texto => setDireccion(texto)}
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7b71b075ae2881041f2901ab53dfc0222c08364f
+>>>>>>> Stashed changes
                             />
                         </View>
                         <View style={{marginTop: 25}}>
@@ -162,12 +255,23 @@ export default function Registro({ navigation }) {
                                 onChangeText={texto => setContrasenia(texto)}
                             />
                         </View>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                        <View style={{marginTop: 25,}}>
+                            <Button text="Registrate" color="#997a3c" outline style={{marginTop: 10}} onPress={this.saveData}/>
+=======
+>>>>>>> Stashed changes
                         <View style={{marginTop: 25}}>
                             <Button text="Comprobante de domicilio" color="#997a3c" onPress={takeImage} />
                             {image && <Image source={{ uri: image }} style={{ alignSelf:'center', width: 200, height: 200, marginTop:15 }} />}
                         </View>
                         <View style={{marginTop: 25}}>
                             <Button onPress={() => { registraUsuario(); }} text="Registrate" color="#997a3c" outline style={{marginTop: 10}}/>
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7b71b075ae2881041f2901ab53dfc0222c08364f
+>>>>>>> Stashed changes
                         </View>
                     </SectionContent>
                     </Section>
@@ -175,4 +279,6 @@ export default function Registro({ navigation }) {
             </ScrollView>
         </Layout>
     )
+
+        }
 }
